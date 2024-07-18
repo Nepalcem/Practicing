@@ -5,11 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="main.js"></script>
+
 </head>
 
 <body>
+    <div class="container">
+        <form action="" id="weather-form">
+            <label for="city">Check Weather in your City!
+                <input type="text" id="city" placeholder="Search..."> </label>
+            <button id="submit">Show Weather</button>
+        </form>
+        <div class="weather-info">
+            <div class="info">
+                <p id="date"></p>
+                <h3 id="cityName"></h3>
+            </div>
+            <div id="description"></div>
+            <div id="temp"></div>
+        </div>
+    </div>
 
+    <script src="main.js"></script>
 </body>
 
 </html>
