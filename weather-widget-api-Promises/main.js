@@ -31,3 +31,5 @@ button.addEventListener("click", (e) => {
   e.preventDefault();
   getWeather(city.value);
 });
+
+const newProm = new Promise((resolve, reject) => {});

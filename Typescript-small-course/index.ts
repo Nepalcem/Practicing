@@ -3,6 +3,12 @@ type Dish = {
   price: number;
 };
 
+type Order = {
+    dish: Dish,
+    status: string,
+    id: number
+}
+
 const menu = [
   {
     name: "roll",
@@ -21,7 +27,7 @@ const menu = [
 
 let cashInRegister = 100;
 let newOrderID = 0;
-const orderQueue = [];
+const orderQueue: Order[] = [];
 
 function addNewDish(dishName: Dish) {
   menu.push(dishName);
@@ -35,13 +41,17 @@ function placeOrder(dishName: string) {
   }
   cashInRegister += findDish.price;
   newOrderID += 1;
-  const newOrder = { dish: findDish, status: "ordered", orderId: newOrderID };
+  const newOrder = { dish: findDish, status: "ordered", id: newOrderID };
   orderQueue.push(newOrder);
   return orderQueue;
 }
 
 function completeOrder(orderId: number) {
-  const locateOrder = orderQueue.find((el) => el.orderId === orderId);
+  const locateOrder = orderQueue.find((el) => el.id === orderId);
+  if (!locateOrder) {
+    console.error(`${orderId} doesn't exist in the menu`);
+    return;
+  }
   locateOrder.status = "completed";
   return locateOrder;
 }
