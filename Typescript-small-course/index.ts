@@ -4,14 +4,14 @@ type Dish = {
 };
 
 type Order = {
-    dish: Dish,
-    status: string,
-    id: number
-}
+  dish: Dish;
+  status: string;
+  id: number;
+};
 
 const menu = [
   {
-    name: "roll",
+    name: "doll",
     price: 10,
   },
   {
